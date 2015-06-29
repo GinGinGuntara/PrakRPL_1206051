@@ -1,0 +1,39 @@
+package segitigasiku;
+
+import java.io.*;
+public class SegitigaSiku {
+
+    public static void main(String[] args) throws Exception{
+        DataInputStream masukan = new DataInputStream(System.in);
+       
+        String strtinggi = null;
+       
+        System.out.println("Segitiga SIku-Siku");
+        System.out.print("Masukkan Tinggi : ");
+        strtinggi = masukan.readLine();
+       
+        int tinggi, i, j, k;
+        tinggi = Integer.parseInt(strtinggi);   // mengubah inputan variabel strtinggi dengan
+// tipe String ke variabel tinggi dengan tipe data integer
+       
+        /* perulangan for i melakukan perulangan dari 1 sampai sebanyak nilai variabel tinggi yang
+dimasukkan(perulangan baris / banyaknya baris yang akan dicetak) */
+        for(i=1;i<=tinggi;i++){
+       
+/* perulangan for j melakukan perulangan spasi(" ")sebanyak nilai variabel tinggi dan berkurang
+1 setiap perulangannya(berpindah baris) sampai jumlah spasi(" ") yang dicetak pada baris yang
+bersangkutan berjumlah 1 */
+            for(j=tinggi;j>=i;j--){
+                System.out.print(" ");
+            }
+
+/* perulangan for k melakukan perulangan bintang("*")dari 1 sampai sebanyak nilai variabel tinggi dan bertambah 1 setiap perulangannya sampai jumlah bintang("*") yang dicetak sama dengan nilai variabel tinggi yang diinput  */
+            for(k=1;k<=i;k++){     
+                System.out.print("*");
+            }
+
+// perintah berganti baris ini dilakukan setiap selesai 1x dalam melakukan perulangan j dan perulangan k
+            System.out.print("\n");
+        }
+    }
+}
